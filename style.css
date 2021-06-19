@@ -5,12 +5,12 @@
   --primary: #abce5c;
   --primary-lighten: #b7f12e;
   --primary-darken: #6f8639;
-  --bg: #e0d9d9;
+  --bg: #c4b5b5;
   --shadow: 2px 0 5px rgba(49, 49, 49, 0.5);
-  --corners: 0;
+  --corners: 5px;
   --text-color: #3a3838;
-  --dark: #3a3838;
-  --dark-lighten: #504c4c;
+  --dark: #3a2e30;
+  --dark-lighten: #584e4e;
   --light: #fdfdfd;
   --danger: #ff3737;
 }
@@ -22,7 +22,7 @@ body{
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Caveat', cursive;
 }
 
 header{
@@ -81,6 +81,7 @@ button{
   cursor: pointer;
   padding: .5em;
 }
+
 button:focus{
   outline: none;
 }
@@ -101,7 +102,7 @@ button.btn-special{
   justify-content: center;
 }
 button.btn-special:after{
-  content: "ADD";
+  content: "Birth";
   margin-top: 5px;
   font-size: 8pt;
   color: var(--primary);
@@ -121,7 +122,17 @@ button.btn-special:hover{
   padding: 1em;
   box-shadow: var(--shadow);
   border-radius: var(--corners);
+  margin: 10px;
+
 }
+
+.grow { 
+  transition: all .2s ease-in-out; 
+  }
+  
+.grow:hover { 
+  transform: scale(1.07); 
+  }
 
 .shadow{
   filter: drop-shadow(var(--shadow));
@@ -132,19 +143,19 @@ button.btn-special:hover{
   filter: drop-shadow(2px 4px 6px #1b1b1b);
   transition: all .35s ease;
 }
-.kitten.happy img{
+.kitten.Happy img{
   filter: drop-shadow(2px 4px 6px #00ffb3);
 }
-.kitten.tolerant img{
+.kitten.Tolerant img{
   filter: drop-shadow(2px 4px 6px #646464);
 }
-.kitten.angry img{
+.kitten.Angry img{
   filter: drop-shadow(2px 4px 6px #ff0000) contrast(1);
 }
-.kitten.gone img{
+.kitten.Gone img{
   filter: drop-shadow(2px 4px 6px #ff0000) contrast(0);
 }
-.kitten.gone{
+.kitten.Gone{
   color: var(--danger);
   pointer-events: none;
 }
