@@ -36,12 +36,12 @@
      kittens.push(kitten)
      catstory.push(kittenName)
      saveKittens()
- 
      form.reset()
      drawKittens()
    }
  }
- 
+   
+
  /**
   * Converts the kittens array to a JSON string then
   * Saves the string to localstorage at the key kittens
@@ -51,6 +51,8 @@
    window.localStorage.setItem("catstory", JSON.stringify(catstory))
    drawKittens()
  }
+
+
  
  /**
   * Attempts to retrieve the kittens string from localstorage
@@ -92,8 +94,7 @@
          </div>
          </div>
          <hr>
-         <div class="d-flex justify-content-center">
-         <i class="fa fa-trash text-danger action button-large" id="delete-btn"aria-hidden="true" onclick="removeKitten('${kitten.id}')"></i></div>
+         <button type="button" onclick="removeKitten('${kitten.id}')">remove</button>
      </div>
      `
    })
@@ -187,4 +188,9 @@
      Math.floor(Math.random() * 10000000)
    );
  }
- 
+
+ function removeKitten() {
+   window.localStorage.clear
+   loadKittens()
+   saveKittens()
+}

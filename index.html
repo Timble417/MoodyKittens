@@ -15,6 +15,7 @@
   <header class="bg-dark d-flex p-1 space-between">
     <img src="moody-logo.png" height="60" alt="Moody Kittens">
     <form class="" onsubmit="addKitten(event)">
+      
       <div class="d-flex">
         <input placeholder="Name" type="text" name="name" />
         <button class="btn-special" type="submit">
@@ -29,7 +30,7 @@
         <img src="moody-logo.png" height="250" alt="Moody Kittens">
         <div class="mt-2">
           <b class="text-center">Welcome!</b>
-          <p>Welcome Cat Mom/Dad!<br>This is a place where you can raise a floof without worrying about cleaning the liter box!</p>
+          <p>Cat Mom/Dad!<br>This is a place where you can raise a floof without worrying about cleaning the liter box!</p>
           <small>Before they run away, make them high and save the day with Catnip!</small>
           <br>
           <button onclick="getStarted()">Pet the Floof!</button>
@@ -38,6 +39,9 @@
     </div>
     <div class="p-2"></div>
       <div id="kittens" class="d-flex flex-wrap">
+      </div>
+      <div>
+        <button onclick="removeKitten()">Clear Kitties</button>
       </div>
   </main>
   <footer class="card bg-dark text-light p-2 d-flex align-items-center justify-content-center">

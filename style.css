@@ -82,7 +82,12 @@ button{
   padding: .5em;
   user-select: none;
 }
-
+.deleteKittens{
+  position: relative;
+  height: 20px;
+  width: 20px;
+  justify-content: center;
+}
 button:focus{
   outline: none;
 }
@@ -145,16 +150,16 @@ button.btn-special:hover{
   transition: all .35s ease;
 }
 .kitten.Happy img{
-  filter: drop-shadow(2px 4px 6px #00ffb3);
+  filter: drop-shadow(2px 4px 6px #4ec45e);
 }
 .kitten.Tolerant img{
-  filter: drop-shadow(2px 4px 6px #646464);
+  filter: drop-shadow(2px 4px 6px #6d6767);
 }
 .kitten.Angry img{
-  filter: drop-shadow(2px 4px 6px #ff0000) contrast(1);
+  filter: drop-shadow(2px 4px 6px #c40909) contrast(1);
 }
 .kitten.Gone img{
-  filter: drop-shadow(2px 4px 6px #ff0000) contrast(0);
+  filter: drop-shadow(2px 4px 6px #be0606) contrast(0);
 }
 .kitten.Gone{
   color: var(--danger);
@@ -179,11 +184,11 @@ button.btn-special:hover{
 
 .btn-cancel{
   background-color: red;
-  border-color: lightcoral;
+  border-color: rgb(219, 118, 118);
 }
 .btn-cancel:hover{
-  background-color: #fa4141;
-  border-color: #ff3737;
+  background-color: #d63737;
+  border-color: #df3333;
 }
 
 .text-danger{
