@@ -80,6 +80,7 @@ button{
   transition: all .2s ease;
   cursor: pointer;
   padding: .5em;
+  user-select: none;
 }
 
 button:focus{
@@ -123,7 +124,7 @@ button.btn-special:hover{
   box-shadow: var(--shadow);
   border-radius: var(--corners);
   margin: 10px;
-
+  user-select: none;
 }
 
 .grow { 
