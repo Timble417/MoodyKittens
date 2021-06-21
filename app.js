@@ -94,7 +94,7 @@
          </div>
          </div>
          <hr>
-         <button type="button" onclick="removeKitten('${kitten.id}')">remove</button>
+         <button type="button" onclick="removeKittengone('${kitten.id}')">remove</button>
      </div>
      `
    })
@@ -189,8 +189,26 @@
    );
  }
 
- function removeKitten() {
-   window.localStorage.clear
+ function removekittengone() {
+   kittens = []
+   catstory = [] 
+   if (affection <=0){
+     window.localStorage.removeitem('kittens')
+     window.localStorage.removeitem('catstory')
+     loadKittens()
+     saveKittens()
+     drawKittens()
+   }
+   else {''}
+
+ }
+
+ function removeKittens() {
+   kittens = []
+   catstory = []
+   window.localStorage.removeItem('kittens')
+   window.localStorage.removeItem('catstory')
    loadKittens()
    saveKittens()
+   drawKittens()
 }
