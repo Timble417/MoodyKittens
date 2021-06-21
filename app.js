@@ -18,16 +18,16 @@
  function addKitten(event) {
    event.preventDefault()
    let form = event.target
- 
+
    let kitten = {
      id: generateId(),
      name: form.name.value,
      mood: "Tolerant",
      affection: 5,
    }
- 
+
    let kittenName = form.name.value;
- 
+
    if (kittenName == "") {alert("You name things you love")}
    else if (catstory.includes(kittenName)) {
      alert("Replacing your cat like your shoes is just low...")
@@ -40,7 +40,7 @@
      drawKittens()
    }
  }
-   
+
 
  /**
   * Converts the kittens array to a JSON string then
@@ -53,7 +53,7 @@
  }
 
 
- 
+
  /**
   * Attempts to retrieve the kittens string from localstorage
   * then parses the JSON string into an array. Finally sets
@@ -69,14 +69,14 @@
      catstory = storedcatstory
    }
  }
- 
+
  /**
   * Draw all of the kittens to the kittens element
   */
  function drawKittens() {
    let kittenListElement = document.getElementById("kittens")
    let kittensTemplate = ""
- 
+
    kittens.forEach(kitten => {
      kittensTemplate += `
  
@@ -94,13 +94,13 @@
          </div>
          </div>
          <hr>
-         <button type="button" onclick="removeKittengone('${kitten.id}')">remove</button>
+         <button type="button" onclick="removeKittenById('${kitten.id}')">remove</button>
      </div>
      `
    })
    kittenListElement.innerHTML = kittensTemplate
  }
- 
+
  /**
   * Find the kitten in the array by its id
   * @param {string} id
@@ -109,7 +109,7 @@
  function findKittenById(id) {
    return kittens.find(k => k.id == id);
  }
- 
+
  /**
   * Find the kitten in the array of kittens
   * Generate a random Number
@@ -131,7 +131,7 @@
    setKittenMood(currentKitten)
    saveKittens()
  }
- 
+
  /**
   * Find the kitten in the array of kittens
   * Set the kitten's mood to tolerant
@@ -144,9 +144,9 @@
    currentKitten.mood = "Tolerant"
    currentKitten.affection = 5;
    saveKittens()
- 
+
  }
- 
+
  /**
   * Sets the kittens mood based on its affection
   * Happy > 6, Tolerant <= 5, Angry <= 3, Gone <= 0
@@ -160,22 +160,22 @@
    if (kitten.affection <= 0) {
      kitten.mood = "Gone";
    }
- 
+
    document.getElementById("kittens").classList.add(kitten.mood)
    saveKittens()
  }
- 
+
  function getStarted() {
    document.getElementById("welcome").remove();
    loadKittens();
    drawKittens();
  }
- 
+
  /**
   * Defines the Properties of a Kitten
   * @typedef {{id: string, name: string, mood: string, affection: number}} Kitten
   */
- 
+
  /**
   * Used to generate a random string id for mocked
   * database generated Id
@@ -189,26 +189,18 @@
    );
  }
 
- function removekittengone() {
-   kittens = []
-   catstory = [] 
-   if (affection <=0){
-     window.localStorage.removeitem('kittens')
-     window.localStorage.removeitem('catstory')
-     loadKittens()
+ function removeKittenById(id) {
+     kittens = kittens.filter(x => x.id !== id)
+     catstory = catstory.filter(x=> x.id !== id)
      saveKittens()
-     drawKittens()
-   }
-   else {''}
-
  }
 
  function removeKittens() {
-   kittens = []
-   catstory = []
-   window.localStorage.removeItem('kittens')
-   window.localStorage.removeItem('catstory')
+     kittens = []
+     catstory = []
+     window.localStorage.removeItem('kittens')
+     window.localStorage.removeItem('catstory')
    loadKittens()
    saveKittens()
    drawKittens()
-}
+ }
